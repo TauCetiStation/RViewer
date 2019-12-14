@@ -36,7 +36,7 @@ gulp.task('watch', () => {
 	bundler.plugin(watchify);
 	gulp.series('js')();
 	bundler.on('update', gulp.series('js'));
-	gulp.watch(['./static/**/*.less'], gulp.series('css'));
+	gulp.watch(['./style/**/*.less'], gulp.series('css'));
 });
 
 gulp.task('copyStatic', () =>
