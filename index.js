@@ -15,6 +15,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 	dropzone.className = "dropzone";
 	dropzone.innerHTML = "<div class='dropzone__thumb'><div>Drop here</div><div>demo file</div></div>"
 
+	fileSelect.addEventListener("input", () => {
+		button_open_demo.classList.add("open_demo__open");
+
+		if (fileSelect.files.length) {
+		  updateFileName(dropzone, fileSelect.files[0]);
+		}
+	  });
+
 	let error = document.createElement("div");
 	error.className = "error";
 	error.textContent = "ERROR";
