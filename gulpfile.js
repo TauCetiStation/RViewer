@@ -8,7 +8,6 @@ const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const browserify = require('browserify');
 const watchify = require('watchify');
-const ghPages = require('gulp-gh-pages');
 
 const bundler = browserify({ entries: './index.js' });
 
@@ -48,11 +47,5 @@ gulp.task('default',
 		gulp.parallel('copyStatic', 'js', 'css')
 	)
 );
-
-gulp.task('gh-pages', () => 
-	gulp.src('./dist/**/*').pipe(ghPages())
-);
-
-gulp.task('deploy', gulp.series('default', 'gh-pages'));
 
 gulp.task('dev', gulp.series('css', 'watch'));
