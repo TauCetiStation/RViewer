@@ -157,8 +157,7 @@ async function run_demo(buf, status_holder) {
 	theme_css = theme_css.replace(css_regex, ".chat_window $1");
 
 	let style = document.createElement("style");
-	let add = base_css + " " + theme_css
-	style.innerHTML = add;
+	style.innerHTML = base_css + " " + theme_css;
 	document.head.appendChild(style);
 	console.log(icons);
 	window.demo_player = new DemoPlayer(demo, icons);
