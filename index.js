@@ -144,7 +144,7 @@ async function run_demo(buf, status_holder) {
 		})());
 	}
 
-	let css_regex = /^(?![\s\/@#*}]+)([\w\d:.\s\[=\]\-,]*)/gm
+	const css_regex = /^(?![\s\/@#*}]+)([\w\d:.\s\[=\]\-,]*)/gm
 
 	await Promise.all(icon_promises);
 	let base_css = await (await fetch("https://cdn.jsdelivr.net/gh/" + window.repository + "@" + demo.commit + "/tgui/packages/tgui-panel/styles/goon/chat-base.scss")).text();
