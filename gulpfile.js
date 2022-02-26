@@ -52,7 +52,7 @@ gulp.task('copyStatic', () =>
 
 gulp.task('default',
 	gulp.series('clean',
-		gulp.parallel('copyStatic', 'js', 'css')
+		gulp.parallel('copyStatic', 'js', 'css', 'chat_css')
 	)
 );
 
