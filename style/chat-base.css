@@ -4,7 +4,7 @@
 *
 ******************************************/
 
-.chat_window body {
+.chat_window {
   background: #fff;
   font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
