@@ -1,0 +1,480 @@
+/*****************************************
+*
+* GLOBAL STYLES
+*
+******************************************/
+
+.chat_window body {
+  background: #fff;
+  font-family: Verdana, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  color: #000000;
+}
+
+.chat_window img {
+  margin: 0;
+  padding: 0;
+  /* line-height: 1; */
+  /* -ms-interpolation-mode: nearest-neighbor; */
+  /* image-rendering: pixelated; */
+}
+
+.chat_window img.icon {
+  height: 1em;
+  min-height: 16px;
+  width: auto;
+  vertical-align: bottom;
+}
+
+.chat_window a.popt {
+  text-decoration: none;
+}
+
+/* POPUPS */
+
+.chat_window .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: #ddd;
+}
+
+.chat_window .popup .close {
+  position: absolute;
+  background: #aaa;
+  top: 0;
+  right: 0;
+  color: #333;
+  text-decoration: none;
+  z-index: 2;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.chat_window .popup .close:hover {
+  background: #999;
+}
+
+.chat_window .popup .head {
+  background: #999;
+  color: #ddd;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-bottom: 2px solid green;
+}
+
+.chat_window .popup input {
+  border: 1px solid #999;
+  background: #fff;
+  margin: 0;
+  padding: 5px;
+  outline: none;
+  color: #333;
+}
+
+.chat_window .popup input[type=text]:hover,
+.chat_window .popup input[type=text]:active,
+.chat_window .popup input[type=text]:focus {
+  border-color: green;
+}
+
+.chat_window .popup input[type=submit] {
+  padding: 5px 10px;
+  background: #999;
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.chat_window .popup input[type=submit]:hover,
+.chat_window .popup input[type=submit]:focus,
+.chat_window .popup input[type=submit]:active {
+  background: #aaa;
+  cursor: pointer;
+}
+
+.chat_window .changeFont {
+  padding: 10px;
+}
+
+.chat_window .changeFont a {
+  display: block;
+  text-decoration: none;
+  padding: 3px;
+  color: #333;
+}
+
+.chat_window .changeFont a:hover {
+  background: #ccc;
+}
+
+.chat_window .highlightPopup {
+  padding: 10px;
+  text-align: center;
+}
+
+.chat_window .highlightPopup input[type=text] {
+  display: block;
+  width: 215px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.chat_window .highlightPopup input.highlightColor {
+  background-color: #ffff00;
+}
+
+.chat_window .highlightPopup input.highlightTermSubmit {
+  margin-top: 5px;
+}
+
+
+/* ADMIN CONTEXT MENU */
+
+.chat_window .contextMenu {
+  background-color: #ddd;
+  position: fixed;
+  margin: 2px;
+  width: 150px;
+}
+
+.chat_window .contextMenu a {
+  display: block;
+  padding: 2px 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.chat_window .contextMenu a:hover {
+  background-color: #ccc;
+}
+
+
+/* ADMIN FILTER MESSAGES MENU */
+
+.chat_window .filterMessages {
+  padding: 5px;
+}
+
+.chat_window .filterMessages div {
+  padding: 2px 0;
+}
+
+.chat_window .filterMessages input,
+.chat_window .filterMessages label {
+}
+
+.chat_window .icon-stack {
+  height: 1em;
+  line-height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+
+
+/*****************************************
+*
+* OUTPUT ACTUALLY RELATED TO MESSAGES
+*
+******************************************/
+
+/* MOTD */
+.chat_window .motd h1,
+.chat_window .motd h2,
+.chat_window .motd h3,
+.chat_window .motd h4,
+.chat_window .motd h5,
+.chat_window .motd h6 {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ANNOUNCEMENTS */
+.chat_window .host_announcements {
+  padding-left: 8px;
+  margin-bottom: 4px;
+}
+
+.chat_window .host_announcements h1,
+.chat_window .host_announcements h2,
+.chat_window .host_announcements h3,
+.chat_window .host_announcements h4,
+.chat_window .host_announcements h5,
+.chat_window .host_announcements h6 {
+  text-decoration: underline;
+}
+
+.chat_window .host_announcements hr {
+  margin: 8px auto;
+  width: 60%;
+  border: 0;
+}
+
+/* TEST MERGES */
+.chat_window .test_merges {
+  padding-left: 8px;
+  margin-bottom: 4px;
+}
+
+.chat_window .emphasized {
+  display: block;
+  padding-left: 8px;
+}
+
+/* ADD HERE FOR BOLD */
+.chat_window .bold,
+.chat_window .name,
+.chat_window .prefix,
+.chat_window .ooc,
+.chat_window .looc,
+.chat_window .antagooc,
+.chat_window .admin,
+.chat_window .adminsay,
+.chat_window .wet {
+  font-weight: bold;
+}
+
+/* ADD HERE FOR ITALIC */
+.chat_window .italic,
+.chat_window .italics {
+  font-style: italic;
+}
+
+/* OUTPUT COLORS */
+.chat_window h1,
+.chat_window h2,
+.chat_window h3,
+.chat_window h4,
+.chat_window h5,
+.chat_window h6 {
+  display: inline-block;
+  font-family: Georgia, Verdana, sans-serif;
+}
+
+.chat_window em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* OOC */
+.chat_window .boldannounce {
+  font-weight: bold;
+}
+.chat_window .success {
+  font-weight: bold;
+}
+
+/* Miscellaneous */
+.chat_window .say {
+}
+
+.chat_window .emote {
+  font-style: italic;
+}
+
+/* Radio: Misc */
+.chat_window .ghostalert {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.chat_window .binarysay {
+  display: block;
+}
+
+
+/* Game Messages */
+.chat_window .userdanger {
+  font-weight: bold;
+  font-size: 3;
+}
+
+.chat_window .danger {
+  font-weight: bold;
+}
+
+.chat_window .warning {
+  font-style: italic;
+}
+
+.chat_window .boldwarning {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.chat_window .boldnotice {
+  font-weight: bold;
+}
+
+.chat_window .boldnicegreen {
+  font-weight: bold;
+}
+
+/* SIZES */
+.chat_window .large {
+  font-size: 3;
+}
+
+.chat_window .big {
+  font-size: x-large;
+}
+
+.chat_window .reallybig {
+  font-size: xx-large;
+}
+
+/* ANTAGS */
+.chat_window .changeling,
+.chat_window .abductor_team0,
+.chat_window .abductor_team1,
+.chat_window .abductor_team2,
+.chat_window .abductor_team3,
+.chat_window .abductor_team4,
+.chat_window .alien {
+  font-style: italic;
+}
+
+.chat_window .cult {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.chat_window .hive,
+.chat_window .hive_queen,
+.chat_window .alertalien {
+  font-weight: bold;
+}
+
+.chat_window .hive_queen {
+  font-size: medium;
+}
+
+/* Admin: Channels */
+.chat_window .admin_announce {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Languages */
+.chat_window .rough {
+  font-family: "Trebuchet MS", cursive, sans-serif;
+}
+
+.chat_window .say_quote {
+  font-family: Georgia, Verdana, sans-serif;
+}
+
+.chat_window .ipc {
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+/* Icons */
+.chat_window .bridge_discord {
+  display: inline-block;
+  width: 0;
+  padding-left: 1em;
+  height: 1em;
+  overflow: hidden;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TxSL1A+xQxCFDdbIgKiJOWoUiVCi1QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9A3NycFF2kxP8lhRYxHhz34929x907QKiXmWp2jAGqZhmpeEzMZFfFrlcE0It+hDEjMVOfSyYT8Bxf9/Dx9S7Ks7zP/Tl6lJzJAJ9IPMt0wyLeIJ7atHTO+8QhVpQU4nPiUYMuSPzIddnlN84FhwWeGTLSqXniELFYaGO5jVnRUIkniSOKqlG+kHFZ4bzFWS1XWfOe/IXBnLayzHWaQ4hjEUtIQoSMKkoow0KUVo0UEynaj3n4Bx1/klwyuUpg5FhABSokxw/+B7+7NfMT425SMAZ0vtj2xzDQtQs0arb9fWzbjRPA/wxcaS1/pQ5Mf5Jea2mRI6BvG7i4bmnyHnC5A4SfdMmQHMlPU8jngfcz+qYsMHALdK+5vTX3cfoApKmrxA1wcAiMFCh73ePdgfbe/j3T7O8HmEJytrSKdIIAAAAGYktHRACwAOoA9hkvsTQAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQflCA4RKhrVH+B2AAADHElEQVRIx8WWT2hcVRTGf9+daZLGzkzFNAmpiFAs2FrEIApZjAgujBIQMTrBlpQ4SaWxFVxH6KL7ghEUp4g11iRGdKMU/EcpgjsXhaAgNIuqLSVQ+95kOk3mveMiZJhM3nuxSuK3u+edd75zz98rEjA4aC3a7T3tpDxGHkjPlDJ9IIv+w1QY9X8ClmV2KXR2KbyZuzg3p+U4DkUJX3nNf0TORoDDwJ71FJpQaNfNsYeQDgkDFjEWzalbZqebzN0QfAL6cLqUmd/UgZeP+XkX2sU45/4DTKZnps9mfmgUuuaQu9De3wJyAJnsvaNHrS3WgdRu/yTwMFuH/Xda/PHIFBw5cv2elbb2K0AnW4vFVNvKvvOT93nrIrDc1n5sG8gBOmrVHcWmFJgEr7NNEBw/dcpc3YFCsfwU8BDbh32//l7O1x0w8SLbjDVOtxoSey5BtyrsZFqpHod7DPRNvFX7njDoTSvVIzQO3I5Pgw0A6NVi5f5AtasJ3fvWzAe5M2vH/hPWmqv6l4H9TZoLwa7MwbkzqpMWiv44sndjbQepvS5QrTcpVEHAucbzhUndwWw2QvWzRnKASlj9GLDYu6WDJ5xJhxL4a3jZ8sY/5UXk9K9mmfdAx21gJWkwOYXh3gSFdCpX7tuYavIbM7VR1nnVfxJoiS2Z0B50SN2J5epssjCy1LN2HBrzhiUGIjT7h8a8+oAZKpa75BLyvzp9OlUoehcQz27SNbeAHzG6EI9vMmZ+BrsG9AH3bmL367Rkadt8+eWA5//ZjrTeu5iJO5yhKv8bbMkRUb0NmAemkgZKwu0qGOeAXxJ2gu9cEEwI+y5Gpwvpt8DCg2Y2jOlTYCGmt231m6bNbNgFwSHQAha3YfVtTbW3VX9MFv0R4DQiqisuz5Syjza+HYL2nT0Elg1TyELntVQrf0xNdS/Vu2DUmzc4EGHrTzMmZs9mPgLZurIaPH5jl6vtfFOhvdHoiMHAbCn71d0kYGjMe8GMLxtE1wST6WrlnUZHI+u6/4S1ZqveSzIdRpRnStnBf1NihVHvC4NWyc4HN7OfRz3P/wZ4Qyo4eVSmOgAAAABJRU5ErkJggg==");
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+/* Popup windows */
+.chat_window .embedded_tip {
+  position: relative;
+  display: inline;
+}
+
+.chat_window .embedded_tip .embedded_tip-text {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  z-index: 1;
+  bottom: 125%;
+  width: 90vw; /* maybe max-width ?? */
+  word-wrap: break-word;
+}
+
+.chat_window .embedded_tip.embedded_tip--mini .embedded_tip-text {
+  width: auto;
+  left: 100%;
+  bottom: 100%;
+  margin-left: -1em;
+}
+
+.chat_window .embedded_tip:hover .embedded_tip-text {
+  display: block;
+}
+
+.chat_window .embedded_tip-mark {
+  position: relative;
+  top: -5px;
+  font-style: italic;
+  font-size: 10px;
+}
+
+/* STAFFWHO */
+.chat_window table.staffwho {
+  border-spacing: 0;
+  border-collapse: collapse;
+  line-height: 1;
+}
+.chat_window table.staffwho td,
+.chat_window table.staffwho th {
+  margin: 0;
+  padding: 2px 4px;
+  font-size: 13px;
+}
+
+.chat_window table.staffwho th {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* CLOWN */
+.chat_window .clown {
+  font-size: 160%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+}
+
+/* HELPER CLASSES */
+.chat_window .text-normal {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.chat_window .hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.chat_window .ml-1 {
+  margin-left: 1em;
+}
+
+.chat_window .ml-2 {
+  margin-left: 2em;
+}
+
+.chat_window .ml-3 {
+  margin-left: 3em;
+}

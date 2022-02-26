@@ -144,21 +144,6 @@ async function run_demo(buf, status_holder) {
 		})());
 	}
 
-	const css_regex = /^(?![\s\/@#*}]+)([\w\d:.\s\[=\]\-,]*)/gm
-
-	await Promise.all(icon_promises);
-	let base_css = await (await fetch("https://cdn.jsdelivr.net/gh/" + window.repository + "@" + demo.commit + "/tgui/packages/tgui-panel/styles/goon/chat-base.scss")).text();
-	base_css = base_css.replace(css_regex, ".chat_window $1");
-	base_css = base_css.replace(/html,/g, "");
-	base_css = base_css.replace(/(body)(\s+{[\w\s\d,{:;$\-#\[\]\(%\)"'.]*)/gm, "$2color: #000000;");
-	base_css = base_css.replace(/height: [^;]+%;/g, "");
-
-	let theme_css = await (await fetch("https://cdn.jsdelivr.net/gh/" + window.repository + "@" + demo.commit + "/tgui/packages/tgui-panel/styles/goon/chat-light.scss")).text();
-	theme_css = theme_css.replace(css_regex, ".chat_window $1");
-
-	let style = document.createElement("style");
-	style.innerHTML = base_css + " " + theme_css;
-	document.head.appendChild(style);
 	console.log(icons);
 	window.demo_player = new DemoPlayer(demo, icons);
 }

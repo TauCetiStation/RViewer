@@ -1,0 +1,225 @@
+
+
+.chat_window a {
+  color: #0000ff;
+}
+
+.chat_window a.visited {
+  color: #ff00ff;
+}
+
+.chat_window a:visited {
+  color: #ff00ff;
+}
+
+
+
+/*****************************************
+*
+* OUTPUT ACTUALLY RELATED TO MESSAGES
+*
+******************************************/
+
+/* MOTD */
+.chat_window .motd {
+  color: #470062;
+  border-left: 3px solid #470062;
+  padding-left: 8px;
+  margin-bottom: 4px;
+}
+
+.chat_window .motd a,
+.chat_window .motd a:link,
+.chat_window .motd a:visited,
+.chat_window .motd a:active,
+.chat_window .motd a:hover {
+  color: #1560bd;
+}
+
+/* ANNOUNCEMENTS */
+.chat_window .host_announcements {
+  border-left: 3px solid #800000;
+  color: #800000;
+}
+
+.chat_window .host_announcements h1,
+.chat_window .host_announcements h2,
+.chat_window .host_announcements h3,
+.chat_window .host_announcements h4,
+.chat_window .host_announcements h5,
+.chat_window .host_announcements h6 {
+  color: #800000;
+}
+
+.chat_window .host_announcements hr {
+  border-top: 1px dashed #800000;
+}
+
+/* TEST MERGES */
+.chat_window .test_merges {
+  border-left: 3px solid #000; /* #013220 */
+}
+
+.chat_window .emphasized {
+  border-left: 3px solid #e9e000;
+  background-color: #faffaf;
+}
+
+/* OUTPUT COLORS */
+.chat_window .highlight {
+  background: yellow;
+}
+
+/* OOC */
+.chat_window .ooc            {color: #002eb8;}
+.chat_window .looc           {color: #6699CC;}
+.chat_window .antagooc       {color: #960018}
+.chat_window .admin				  {color: #386aff;}
+.chat_window .adminsay			  {color: #006666;}
+.chat_window .adminnotice		{color: #0000ff;}
+.chat_window .boldannounce		{color: #ff0000;}
+.chat_window .success				{color: #00bf36;}
+.chat_window .vote				    {color: purple;}
+
+/* Miscellaneous */
+.chat_window .alert {
+  color: #ff0000;
+}
+.chat_window h1.alert,
+.chat_window h2.alert {
+  color: #000000;
+}
+.chat_window .artefact {
+  color: #ffa500;
+}
+.chat_window .electronicblue {
+  color: #00bfff;
+  background-color: #414141;
+}
+.chat_window .piety {
+  color: #ceca0e;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Radio Channels */
+.chat_window .comradio		{color: #193a7a;}
+.chat_window .syndradio		{color: #6d3f40;}
+.chat_window .voxradio		{color: #88900e;}
+.chat_window .centradio		{color: #5c5c8a;}
+.chat_window .airadio		{color: #ff00ff;}
+.chat_window .secradio		{color: #a30000;}
+.chat_window .engradio		{color: #a66300;}
+.chat_window .medradio		{color: #008160;}
+.chat_window .sciradio		{color: #993399;}
+.chat_window .supradio		{color: #5f4519;}
+
+/* Radio: Misc */
+.chat_window .radio			{color: #008000;}
+.chat_window .deptradio		{color: #993399;}
+.chat_window .deadsay		{color: #5c00e6;}
+.chat_window .ghostalert		{color: #6600ff;}
+.chat_window .newscaster		{color: #800000;}
+
+.chat_window .binarysay {
+  color: #20c20e;
+  background-color: #414141;
+}
+.chat_window .binarysay a {
+  color: #00ff00;
+}
+.chat_window .binarysay a:active,
+.chat_window .binarysay a:visited {
+  color: #88ff88;
+}
+
+/* Game Messages */
+.chat_window .userdanger			{color: #ff0000;}
+.chat_window .danger				{color: #ff0000;}
+.chat_window .warning			{color: #ff0000;}
+.chat_window .boldwarning		{color: #ff0000;}
+.chat_window .red				{color: #ff0000;}
+.chat_window .rose				{color: #ff5050;}
+.chat_window .info				{color: #0000cc;}
+.chat_window .notice				{color: #000099;}
+.chat_window .boldnotice			{color: #000099;}
+.chat_window .nicegreen			{color: #14a833;}
+.chat_window .boldnicegreen		{color: #14a833;}
+
+.chat_window .wet				{color: #007fbf;}
+
+/* ANTAGS */
+.chat_window .shadowling			{color: #3b2769;}
+.chat_window .changeling			{color: #800080;}
+.chat_window .abductor_team0		{color: #800080;}
+.chat_window .abductor_team1		{color: #c00070;}
+.chat_window .abductor_team2		{color: #406e6a;}
+.chat_window .abductor_team3		{color: #6e4040;}
+.chat_window .abductor_team4		{color: #800080;}
+.chat_window .cult				{color: #800080;}
+.chat_window .alien				{color: #6b286b;}
+.chat_window .hive,
+.chat_window .hive_queen			{color: #420a81;}
+.chat_window .noticealien		{color: #00c000;}
+.chat_window .alertalien			{color: #00c000;}
+
+/* Admin: Channels */
+.chat_window .admin_announce {
+  color: #000;
+  background: #bababa;
+}
+
+/* Languages */
+.chat_window .tajaran				{color: #803b56;}
+.chat_window .tajaran_signlang		{color: #941c1c;}
+.chat_window .skrell					{color: #00ced1;}
+.chat_window .soghun					{color: #73a800;}
+.chat_window .vox					{color: #aa00aa;}
+.chat_window .ipc					{color: #505050;}
+.chat_window .syndcode				{color: #c21b1b;}
+
+.chat_window .interface {
+	color: #330033;
+}
+
+/* Popup windows */
+.chat_window .embedded_tip .embedded_tip-text {
+  background-color: #353535;
+  color: white;
+  border: 1px solid black;
+}
+
+/* STAFFWHO */
+.chat_window table.staffwho {
+  color: #333;
+}
+
+.chat_window table.staffwho th {
+	color: #807473;
+}
+.chat_window table.staffwho .Admins			{color: #e67e22;}
+.chat_window table.staffwho .Mentors			{color: #e91e63;}
+.chat_window table.staffwho .Developers		{color: #5e5ed1;}
+.chat_window table.staffwho .Xenovisors		{color: #2ecc71;}
+
+/* CLOWN */
+.chat_window .clown {
+  color: #ff70c1;
+}
+
+
+/* CONNECTION */
+.chat_window .connectionClosed,
+.chat_window .fatalError {
+  background: red;
+  color: white;
+  padding: 5px;
+}
+
+.chat_window .connectionClosed.restored {
+  background: green;
+}
+
+.chat_window .internal.boldnshit {
+  color: blue;
+  font-weight: bold;
+}

@@ -28,7 +28,15 @@ gulp.task('css', () =>
 		.pipe(less())
 		.pipe(cleanCSS())
 		.pipe(concat('style.min.css'))
-		.pipe(gulp.dest('./dist'))
+		.pipe(gulp.dest('./dist')),
+);
+
+gulp.task('chat_css', () =>
+	gulp.src('./style/**/*.css')
+		.pipe(less())
+		.pipe(cleanCSS())
+		.pipe(concat('style.chat.css'))
+		.pipe(gulp.dest('./dist')),
 );
 
 gulp.task('watch', () => {
@@ -48,4 +56,4 @@ gulp.task('default',
 	)
 );
 
-gulp.task('dev', gulp.series('css', 'watch'));
+gulp.task('dev', gulp.series('css', 'chat_css', 'watch'));
