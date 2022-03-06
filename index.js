@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 		button_open_demo.classList.add("open_demo__open");
 
 		if (fileSelect.files.length) {
-		  updateFileName(dropzone, fileSelect.files[0]);
+			updateFileName(dropzone, fileSelect.files[0]);
 		}
-	  });
+	});
 
 	let error = document.createElement("div");
 	error.className = "error";
@@ -67,56 +67,56 @@ document.addEventListener("DOMContentLoaded", async function () {
 		const dropZoneElement = inputElement.closest(".dropzone");
 
 		dropZoneElement.addEventListener("click", (e) => {
-		  inputElement.click();
+			inputElement.click();
 		});
 
 		inputElement.addEventListener("change", (e) => {
-		  if (inputElement.files.length) {
-			updateFileName(dropZoneElement, inputElement.files[0]);
-		  }
+			if (inputElement.files.length) {
+				updateFileName(dropZoneElement, inputElement.files[0]);
+			}
 		});
 
 		dropZoneElement.addEventListener("dragover", (e) => {
-		  e.preventDefault();
-		  dropZoneElement.classList.add("dropzone__over");
+			e.preventDefault();
+			dropZoneElement.classList.add("dropzone__over");
 		});
 
 		["dragleave", "dragend"].forEach((type) => {
-		  dropZoneElement.addEventListener(type, (e) => {
-			dropZoneElement.classList.remove("dropzone__over");
-		  });
+			dropZoneElement.addEventListener(type, (e) => {
+				dropZoneElement.classList.remove("dropzone__over");
+			});
 		});
 
 		dropZoneElement.addEventListener("drop", (e) => {
-		  e.preventDefault();
-		  button_open_demo.classList.add("open_demo__open");
+			e.preventDefault();
+			button_open_demo.classList.add("open_demo__open");
 
-		  if (e.dataTransfer.files.length) {
-			inputElement.files = e.dataTransfer.files;
-			updateFileName(dropZoneElement, e.dataTransfer.files[0]);
-		  }
+			if (e.dataTransfer.files.length) {
+				inputElement.files = e.dataTransfer.files;
+				updateFileName(dropZoneElement, e.dataTransfer.files[0]);
+			}
 
-		  dropZoneElement.classList.remove("dropzone__over");
+			dropZoneElement.classList.remove("dropzone__over");
 		});
-	  });
+	});
 });
 
-function error_open(e, text = "ERROR"){
+function error_open(e, text = "ERROR") {
 	e.classList.add("error__open");
 	e.textContent = text
-	setTimeout(function(){e.classList.remove("error__open");}, 3800)
+	setTimeout(function () { e.classList.remove("error__open"); }, 3800)
 }
 
 function updateFileName(dropZoneElement, file) {
 	let thumbnailElement = dropZoneElement.querySelector(".dropzone__thumb");
-  
+
 	// First time - there is no thumbnail element, so lets create it
 	if (thumbnailElement) {
 		thumbnailElement.classList.add("dropzone__thumblabel")
 		thumbnailElement.dataset.label = file.name;
 	}
 }
-  
+
 
 async function run_demo(buf, status_holder) {
 	status_holder.textContent = "Parsing demo file...";
@@ -144,14 +144,6 @@ async function run_demo(buf, status_holder) {
 		})());
 	}
 
-	await Promise.all(icon_promises);
-	let chat_css = await (await fetch("https://cdn.jsdelivr.net/gh/" + window.repository + "@" + demo.commit + "/code/modules/goonchat/browserassets/css/browserOutput.css")).text();
-	chat_css = chat_css.replace(/((?:^|[},])[^\@\{]*?)([a-zA-Z.#\[\]":=\-_][a-zA-Z0-9.# \[\]":=\-_]*)(?=.+\{)/g, "$1.chat_window $2");
-	chat_css = chat_css.replace(/height: [^;]+%;/g, "");
-	chat_css = chat_css.replace(/ ?html| ?body/g, "");
-	let style = document.createElement("style");
-	style.innerHTML = chat_css;
-	document.head.appendChild(style);
 	console.log(icons);
 	window.demo_player = new DemoPlayer(demo, icons);
 }
