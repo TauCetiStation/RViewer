@@ -15,6 +15,7 @@ import { despam_promise } from "../misc/promise_despammer";
 import { view_turfs } from "./view";
 import { animate_appearance, appearance_interpolate } from "./rendering/animation";
 import { not_null } from "../misc/gl_util";
+import { RangeVision } from "../misc/constants";
 
 const empty_arr : [] = [];
 
@@ -91,12 +92,7 @@ export class DemoPlayer {
 					if(res_load.path) {
 						res.path = res_load.path;
 						if(!res.data) {
-							let paintings_pattern = "data/paintings/public/";
-							if(res_load.path.startsWith(paintings_pattern) && this.rev_data?.repo == "yogstation13/Yogstation") {
-								res.load_url = "https://cdn.yogstation.net/paintings/" + res_load.path.substring(paintings_pattern.length);
-							} else {
-								res.load_url = `https://cdn.jsdelivr.net/gh/${this.rev_data?.repo || "yogstation13/Yogstation"}@${(this.rev_data?.commit || "master")}/${res_load.path}`;
-							}
+							res.load_url = `https://cdn.jsdelivr.net/gh/${this.rev_data?.repo || "TauCetiStation/TauCetiClassic"}@${(this.rev_data?.commit || "master")}/${res_load.path}`;
 						}
 					}
 					res.update();
@@ -187,8 +183,8 @@ export class DemoPlayer {
 				}
 
 				if(typeof ref == "string") {
-					view_dist_x = 9.5;
-					view_dist_y = 7.5;
+					view_dist_x = RangeVision.RadiusVisionX;
+					view_dist_y = RangeVision.RadiusVisionY;
 					view_origin = atom.loc;
 				}
 

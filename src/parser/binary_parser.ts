@@ -43,7 +43,7 @@ export class DemoParserBinary extends DemoParser {
 			if(commit_info[0] == '{') {
 				this.set_rev_data(JSON.parse(commit_info) as RevData);
 			} else {
-				this.set_rev_data({commit: commit_info, repo: 'yogstation13/Yogstation'});
+				this.set_rev_data({commit: commit_info, repo: 'TauCetiStation/TauCetiClassic'});
 			}
 
 			this.load_end = this.read_buffer[commit_hash_end+1] + (this.read_buffer[commit_hash_end+2]<<8) + (this.read_buffer[commit_hash_end+3]<<16) + (this.read_buffer[commit_hash_end+4]<<24);

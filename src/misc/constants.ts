@@ -176,3 +176,8 @@ export const enum RenderPlates{
 	LIGHT_MASK_PLATE,
 	NON_GAME_PLATE,
 }
+
+export const enum RangeVision{
+	RadiusVisionX = 7.5,
+	RadiusVisionY = 7.5,
+}

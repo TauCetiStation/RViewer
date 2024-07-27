@@ -116,7 +116,7 @@ export class ContextMenu extends Menu {
 				subtext.textContent = `[0x${obj.ref.toString(16)}]`;
 				fragment.appendChild(button);
 				button.addEventListener("click", () => {
-					let submenu = new ContextActionMenu(ui, this, obj.ref, obj.clients);
+					let submenu = new ContextActionMenu(ui, this, obj.ref, obj.clients, true);
 					submenu.put_to_right(button);
 					submenu.open(true);
 				});
